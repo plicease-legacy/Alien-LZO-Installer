@@ -245,8 +245,8 @@ B<NOTE:> using this method may require modules returned by the
 L<system_requires|Alien::LZO::Installer> method.
 
 B<NOTE:> This form will also use the lzo provided by L<Alien::LZO>
-if version 0.19 or better is installed.  This makes this method ideal for
-finding lzo as an optional dependency.
+if it is installed.  This makes this method ideal for finding
+lzo as an optional dependency.
 
 Options:
 
