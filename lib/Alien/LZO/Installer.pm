@@ -217,7 +217,7 @@ sub build_requires
   if($^O eq 'MSWin32')
   {
     $prereqs{'Alien::MSYS'} = '0.07';
-    $prereqs{'Archive::Ar::Libarchive'} = 0;
+    $prereqs{'Archive::Ar'} = '2.00';
   }
   
   \%prereqs;
@@ -445,8 +445,8 @@ sub build_install
       require File::Temp;
       my $dir = File::Temp::tempdir( CLEANUP => 1 );
       # TODO: use Archive::Ar when it is a little less broken
-      require Archive::Ar::Libarchive;
-      my $ar = Archive::Ar::Libarchive->new(_catfile($prefix, 'lib', 'liblzo2.a'));
+      require Archive::Ar;
+      my $ar = Archive::Ar->new(_catfile($prefix, 'lib', 'liblzo2.a'));
       my @objects = grep { $_ ne '/' } $ar->list_files;
       foreach my $object (@objects)
       {
